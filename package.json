@@ -1,0 +1,63 @@
+{
+  "private": true,
+  "name": "actions-semantic-release",
+  "version": "0.0.0-semantically-released",
+  "description": "semantic-release with all the presets available",
+  "author": "KhulnaSoft Ltd <email@khulnasoft.com> (https://www.khulnasoft.com)",
+  "homepage": "https://github.com/khulnasoft-lab/action-semantic-release",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/khulnasoft-lab/action-semantic-release.git"
+  },
+  "bugs": {
+    "url": "https://github.com/khulnasoft-lab/action-semantic-release/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/khulnasoft-bot"
+  },
+  "license": "MIT",
+  "keywords": [
+    "github",
+    "action",
+    "semantic-release",
+    "release"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "test:cli": "node --experimental-test-coverage --test",
+    "test": "npm run test:cli -- test",
+    "test:watch": "npm run test:cli --watch",
+    "test:ci": "npm run test:cli -- --test-reporter node-test-github-reporter test"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@semantic-release/apm": "^4.0.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.1",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.4",
+    "@semantic-release/gitlab": "^12.0.3",
+    "@semantic-release/release-notes-generator": "^11.0.4",
+    "conventional-changelog-angular": "^6.0.0",
+    "conventional-changelog-atom": "^3.0.0",
+    "conventional-changelog-codemirror": "^3.0.0",
+    "conventional-changelog-conventionalcommits": "^6.1.0",
+    "conventional-changelog-ember": "^3.0.0",
+    "conventional-changelog-eslint": "^4.0.0",
+    "conventional-changelog-express": "^3.0.0",
+    "conventional-changelog-jquery": "^4.0.0",
+    "conventional-changelog-jshint": "^3.0.0",
+    "semantic-release": "^21.0.7",
+    "semantic-release-replace-plugin": "^1.2.7"
+  },
+  "devDependencies": {
+    "node-test-github-reporter": "^1.1.3"
+  }
+}
