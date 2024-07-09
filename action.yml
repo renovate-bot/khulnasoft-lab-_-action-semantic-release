@@ -1,26 +1,96 @@
-name: A Composite action
-description: GitHub Composite Action Template
+name: Conventional Semantic Release
+description: Semantic Release with all the presets
 
 branding:
-  icon: plus
-  color: green
-
-inputs:
-  foo:
-    description: foo
-    required: false
-    default: ""
-
-outputs:
-  bar:
-    description: bar
-    value: ${{ steps.main.outputs.bar }}
+  color: red
+  icon: package
 
 runs:
-  using: composite
-  steps:
-    - id: main
-      shell: bash
-      run: ${{ github.action_path }}/scripts/index.sh
-      env:
-        FOO: ${{ inputs.pathspec }}
+  using: docker
+  image: docker://ghcr.io/khulnasoft-lab/action-semantic-release:latest
+
+inputs:
+  dry:
+    required: false
+    default: 'false'
+    description: Execute in dry-run mode
+
+  debug:
+    required: false
+    default: 'false'
+    description: Output debugging information
+
+  format:
+    description: The Git tag format used by semantic-release to identify releases
+
+  branches:
+    required: false
+    description: The branches on which releases should happen
+
+  config:
+    required: false
+    description: file path to configuration file
+
+outputs:
+  published:
+    description: "'true' when release is successfully published, 'false' when nothing is published"
+
+  last-release-git-head:
+    description: The sha of the last commit being part of the last release
+
+  last-release-git-tag:
+    description: The Git tag associated with the last release
+
+  last-release-channel:
+    description: The distribution channel on which the last release was initially made available (`undefined` for the default distribution channel)
+
+  last-release-version:
+    description: The version of the last release
+
+  last-release-version-major:
+    description: last release version major component
+
+  last-release-version-minor:
+    description: last release version minor component
+
+  last-release-version-patch:
+    description: last release version patch component
+
+  last-release-version-prerelease:
+    description: last release version prerelease component
+
+  last-release-version-buildmetadata:
+    description: last release version buildmetadata component
+
+  release-type:
+    description: The semver type of the release (patch, minor or major)
+
+  release-git-head:
+    description: The sha of the last commit being part of the new release
+
+  release-git-tag:
+    description: The Git tag associated with the new release
+
+  release-version:
+    description: The version of the new release.
+
+  release-notes:
+    description: The release notes for the new release
+
+  release-channel:
+    description: The distribution channel on which the next release will be made available (`undefined` for the default distribution channel)
+
+  release-version-major:
+    description: last release version major component
+
+  release-version-minor:
+    description: last release version minor component
+
+  release-version-patch:
+    description: last release version patch component
+
+  release-version-prerelease:
+    description: last release version prerelease component
+
+  release-version-buildmetadata:
+    description: last release version buildmetadata component
