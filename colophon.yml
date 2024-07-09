@@ -5,4 +5,4 @@ id: action-composite-template
 about:
   title: Template GitHub Composite Actions
   description: A template for GitHub Template GitHub Composite Actions
-  repository: khulnasoft/action-composite-template
+  repository: khulnasoft-lab/action-semantic-release
