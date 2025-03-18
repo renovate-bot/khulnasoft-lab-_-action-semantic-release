@@ -1,6 +1,6 @@
-# Template GitHub Composite Actions
+# GitHub Action: Semantic Release
 
-A template for GitHub Template GitHub Composite Actions
+semantic-release as a GitHub Action, with all presets included
 
 [![license][license-img]][license-url]
 [![release][release-img]][release-url]
@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: semantic-release
-        uses: khulnasoft-lab/action-semantic-release@master
+        uses: khulnasoft-lab/action-semantic-release@v2
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -77,7 +77,7 @@ jobs:
 
 ----
 > Author: [KhulnaSoft Ltd](https://www.khulnasoft.com/) &bull;
-> Twitter: [@KhulnaSoft](https://twitter.com/khulnasoft)
+> Twitter: [@khulnasoft](https://twitter.com/khulnasoft)
 
 [license-url]: LICENSE
 [license-img]: https://badgen.net/github/license/khulnasoft-lab/action-semantic-release

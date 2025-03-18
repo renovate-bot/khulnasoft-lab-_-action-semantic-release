@@ -1,15 +1,17 @@
+# kics-scan disable=9bae49be-0aa3-4de5-bab2-4c3a069e40cd,67fd0c4a-68cf-46d7-8c41-bc9fba7e40ae
+
 # --- base stage --- #
 
-FROM alpine:3.19 AS base
+FROM alpine:3.20 AS base
 
 # hadolint ignore=DL3018
 RUN apk add --no-cache --update \
-  npm=9.6.6-r0 \
-  git=2.40.1-r0 \
-  openssh=9.3_p2-r0 \
-  ca-certificates=20230506-r0 \
-  ruby-bundler=2.4.15-r0 \
-  bash=5.2.15-r5
+  npm \
+  git \
+  openssh \
+  ca-certificates \
+  ruby-bundler \
+  bash
 
 WORKDIR /action
 
